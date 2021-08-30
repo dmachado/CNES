@@ -1,0 +1,8 @@
+<div *ngIf="this._loginService.isLoggedIn(); then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <h1>Hello {{this._loginService.currentUser.nome}}!</h1>
+  <button (click)="logout()">Logout</button>
+</ng-template>
+<ng-template #elseBlock>
+  <button (click)="login()">Login</button>
+</ng-template>
